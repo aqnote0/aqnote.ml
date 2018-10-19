@@ -1,0 +1,13 @@
+{
+    "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        "./001",
+        "-p",
+        "*test.py"
+    ],
+    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.unittestEnabled": true,
+    "python.pythonPath": "/opt/anaconda3/envs/tensorflow/bin/python"
+}
