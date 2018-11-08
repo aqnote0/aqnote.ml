@@ -1,5 +1,8 @@
 import tensorflow as tf
 
 hello = tf.constant('HelloWorld!')
-sess = tf.Session()
-print( sess.run(hello) )
+print( hello )
+
+session = tf.Session()
+result = session.run(hello)
+print( result )

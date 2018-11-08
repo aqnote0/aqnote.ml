@@ -8,24 +8,22 @@ import tensorflow as tf
 # 构造器的返回值代表该常量 op 的返回值.
 with tf.device("/cpu:0"):  # /cpu:0 /gpu:0
     matrix1 = tf.constant([[3., 3.]])
-print(matrix1)
+    print(matrix1)
 
 # 创建另外一个常量 op, 产生一个 2x1 矩阵.
 with tf.device("/cpu:0"):  # /cpu:0 /gpu:0
     matrix2 = tf.constant([[2.],[2.]])
-print(matrix2)
+    print(matrix2)
 
 # 创建一个矩阵乘法 matmul op , 把 'matrix1' 和 'matrix2' 作为输入.
 # 返回值 'product' 代表矩阵乘法的结果.
 with tf.device("/cpu:0"):  # /cpu:0 /gpu:0
     product = tf.matmul(matrix1, matrix2)
-print(product)
-
+    print(product)
 
 # 在一个会话中启动图
-
 # 启动默认图.
-sess = tf.Session(config = tf.ConfigProto(log_device_placement=True))
+session = tf.Session(config = tf.ConfigProto(log_device_placement=True))
 
 # 调用 sess 的 'run()' 方法来执行矩阵乘法 op, 传入 'product' 作为该方法的参数. 
 # 上面提到, 'product' 代表了矩阵乘法 op 的输出, 传入它是向方法表明, 我们希望取回
@@ -38,6 +36,6 @@ sess = tf.Session(config = tf.ConfigProto(log_device_placement=True))
 # 返回值 'result' 是一个 numpy `ndarray` 对象.
 
 # write method 1
-result = sess.run(product)
+result = session.run(product)
 print(result)   # ==> [[ 12.]]
-sess.close()
+session.close()
