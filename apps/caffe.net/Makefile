@@ -1,11 +1,26 @@
+#
+#     Title: 
+#    Author: "Peng Li"<aqnote@aqnote.com>
+#     CDate: 20181210
+#     MDate:
+# Copyright: http://aqnote.com/LICENSE
+#
+#
 
+# Constant
+MODULE_NAME 		= caffe.net
+MODULE_INTRODUCE 	=
 
-## defaug flag
-APP_DEBUG = $(DEBUG)
-APP_SOURCE := cpp
+# Depends
+MODULE_DEPENDS_PROJ 		= 
+MODULE_DEPENDS_PKG			= caffe
+MODULE_DEPENDS_NONSTD_PATH 	=
+MODULE_DEPENDS_NONSTD_FILE	=
 
-APP_HOME := 
-APP_LIBS := 
-APP_PKG  := caffe
+# Compile
+MODULE_COMPILER 	= cpp
+# MODULE_BUILD 		= DEBUG
+MODULE_OUTPUT 		= $(MODULE_NAME).app
 
-include ../../core.mk
+include ../../constant.makefile
+include ${PROJECT_HOME}/global.makefile
